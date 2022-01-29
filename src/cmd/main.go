@@ -16,7 +16,7 @@ import (
 
 func main() {
 	var config models.Config
-	ymlDatam, err := os.ReadFile("../config.yml")
+	ymlDatam, err := os.ReadFile("../data/config.yml")
 	util.CheckPanic(err)
 	err = yaml.Unmarshal(ymlDatam, &config)
 	util.CheckPanic(err)
