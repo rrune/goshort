@@ -1,0 +1,10 @@
+version: "3"
+services:
+  web:
+    build: ./
+    container_name: qnd
+    ports:
+      - "12344:8080"
+    volumes:
+      - ./err.txt:/app/err.txt
+    restart: unless-stopped
