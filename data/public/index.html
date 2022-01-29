@@ -10,16 +10,9 @@
   </head>
   <body>
     <h1 id="qnd.be">qnd.be</h1>
-    <p>
-      Just another simple url shortener to use with curl. Kinda like
-      <a href="https://0x0.st">0x0.st</a>. Just way more shitty. It was written
-      in one day, so don’t expext anything great.
-    </p>
+    <p>Just another simple url shortener to use with curl. Kinda like <a href="https://0x0.st">0x0.st</a>. Just way more shitty. It was written in one day, so don’t expext anything great.</p>
     <h2 id="usage">usage</h2>
-    <p>
-      there is built in authentication, but that can be turned off for adding
-      links
-    </p>
+    <p>there is built in authentication, but that can be turned off for adding links</p>
     <p>without auth:</p>
     <pre><code>curl -X POST \
     -d https://example.com \
@@ -36,35 +29,24 @@
     https://qnd.be</code></pre>
     <p>That’s all it can do. Here, auth is probably on all the way atm.</p>
     <h2 id="host">host</h2>
-    <p>
-      If that repo I linked is still private, well, tough luck. Contact me if
-      you really want it, but maybe just use something you can actually trust to
-      not explode because of bad error handling.
-    </p>
+    <p>If that repo I linked is still private, well, tough luck. Contact me if you really want it, but maybe just use something you can actually trust to not explode because of bad error handling.</p>
     <ul>
-      <li>
-        clone
-        <a href="https://github.com/rrune/goshort">github.com/rrune/goshort</a>
-      </li>
-      <li>
-        copy <code>/data/config.yml.sample</code> to
-        <code>/data/config.yml</code>
-      </li>
-      <li>configure the config</li>
-      <li>change port in <code>docker-compose.yml</code></li>
-      <li><code>docker-compose up</code></li>
+    <li>clone <a href="https://github.com/rrune/goshort">github.com/rrune/goshort</a></li>
+    <li>copy <code>/data/config.yml.sample</code> to <code>/data/config.yml</code></li>
+    <li>configure the config</li>
+    <li>change port in <code>docker-compose.yml</code></li>
+    <li><code>docker-compose up</code></li>
+    </ul>
+    <p>SQL table should be called <code>shortLinks</code>, 3 colums:</p>
+    <ul>
+    <li>short (type text)</li>
+    <li>url (type text)</li>
+    <li>timestamp (type timestamp)</li>
     </ul>
     <h2 id="stuff-used">stuff used</h2>
-    <p>
-      This runs on Go. That’s basically it. Uses mariadb to store stuff. If you
-      want to use some other database, you have to write that code yourself.
-    </p>
+    <p>This runs on Go. That’s basically it. Uses mariadb to store stuff. If you want to use some other database, you have to write that code yourself.</p>
     <h2 id="abusecontact">abuse/contact</h2>
-    <p>
-      Should this actually be without auth, either because I decided to make it
-      public or because I fucked up, please only link stuff compliant with
-      german law. Thanks!
-    </p>
-    <p><a href="mailto:rune@ruune.de">rune@ruune.de</a></p>
+    <p>Should this actually be without auth, either because I decided to make it public or because I fucked up, please only link stuff compliant with german law. Thanks!</p>
+    <p><a href="mailto:rune@ruune.de">rune@ruune.de</a></p>    
   </body>
 </html>

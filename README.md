@@ -38,6 +38,12 @@ If that repo I linked is still private, well, tough luck. Contact me if you real
 - change port in ``docker-compose.yml``
 - ``docker-compose up``
 
+SQL table should be called ``shortLinks``, 3 colums:
+
+- short (type text)
+- url (type text)
+- timestamp (type timestamp)
+
 ## stuff used
 This runs on Go. That's basically it. Uses mariadb to store stuff. If you want to use some other database, you have to write that code yourself.
 
