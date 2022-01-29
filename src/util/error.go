@@ -22,7 +22,7 @@ func Check(err error, log bool) (r bool) {
 
 func CheckPanic(err error) {
 	if err != nil {
-		f, err2 := os.OpenFile("../err.txt", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
+		f, err2 := os.OpenFile("../data/err.txt", os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0755)
 		if err2 != nil {
 			log.Fatal(err, err2)
 		}

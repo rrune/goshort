@@ -6,5 +6,5 @@ services:
     ports:
       - "12344:8080"
     volumes:
-      - ./err.txt:/app/err.txt
+      - ./data:/app/data
     restart: unless-stopped
