@@ -1,6 +1,6 @@
 @font-face {
   font-family: Sometype;
-  src: url(SometypeMono-Regular.ttf);
+  src: url(/static/SometypeMono-Regular.ttf);
 }
 :root {
   --background: #141617;
