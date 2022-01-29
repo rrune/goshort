@@ -1,9 +1,0 @@
-url: https://example.com/ # needs / at the end
-port: "8080" # as string
-username: <database username>
-password: <database password>
-address: tcp(<ip>:<port>)/<database>
-auth: false # authentication required to add short
-keys: # api keys
-  - abc
-  - yxz
