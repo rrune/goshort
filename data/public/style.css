@@ -1,0 +1,149 @@
+@font-face {
+  font-family: Sometype;
+  src: url(SometypeMono-Regular.ttf);
+}
+:root {
+  --background: #141617;
+  --background-accent: #1b1d1e;
+  --font: #dbd8d4;
+  --font-hover: #b3aca2;
+  --font-grey: #9c9b9a;
+  --link: #934cdc;
+  --link-hover: #af80e2;
+  --selection: #a760ee;
+  --hr: grey;
+  --monospaceFont: "Sometype";
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  color: var(--font);
+  font-family: var(--monospaceFont);
+  font-size: 16px;
+  line-height: 1.5em;
+  padding: 1em;
+  margin: auto;
+  max-width: 45em;
+  background: var(--background);
+}
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+::-moz-selection,
+::selection {
+  background: var(--selection);
+  color: var(--font-light);
+}
+p {
+  margin: 1em 0;
+}
+img {
+  max-width: 100%;
+  border: 0;
+  -ms-interpolation-mode: bicubic;
+  vertical-align: middle;
+}
+h3,
+h2,
+h1,
+h6,
+h5,
+h4 {
+  font-weight: 600;
+  color: var(--font);
+  line-height: 1em;
+  font-family: var(--monospaceFont) !important;
+}
+h6,
+h5,
+h4 {
+  font-weight: bold;
+}
+h1 {
+  font-size: 1.5em;
+}
+h2 {
+  font-size: 1.2em;
+}
+h3 {
+  font-size: 1em;
+}
+h4 {
+  font-size: 0.9em;
+}
+h5 {
+  font-size: 0.9em;
+}
+h6 {
+  font-size: 0.9em;
+}
+blockquote {
+  color: var(--font-grey);
+  margin: 0;
+  padding-left: 3em;
+  border-left: 0.5em var(--background-accent) solid;
+}
+hr {
+  display: block;
+  border: 0;
+  margin: 1em 0;
+  padding: 0;
+  height: 1px;
+  background-color: var(--hr);
+  margin-top: 0.5em;
+}
+pre,
+code,
+kbd,
+samp {
+  font-family: var(--monospaceFont);
+  font-size: 0.98em;
+}
+pre {
+  white-space: pre;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  background-color: var(--background-accent);
+  padding: 10px 15px;
+}
+mark {
+  background: var(--selection);
+}
+ul,
+ol {
+  margin: 1em 0;
+  padding: 0 0 0 2em;
+}
+li p:last-child {
+  margin: 0;
+}
+@media (max-width: 480px) {
+  body {
+    font-size: 18px;
+  }
+}
+@media (min-width: 480px) and (orientation: landscape) {
+  article {
+    margin: 50px 0;
+  }
+}
+@media (orientation: portrait) {
+  body {
+    font-size: 18px;
+  }
+}
+
+article img {
+  margin: 1em 0;
+}
+
+footer {
+  font-size: 13px;
+}

@@ -21,7 +21,7 @@ func NewRouter(short short.Short, cfg models.Config) http.Handler {
 		AllowedHeaders: []string{"*"},
 	}))
 
-	fs := http.FileServer(http.Dir("./public"))
+	fs := http.FileServer(http.Dir("../data/public"))
 	r.Handle("/*", http.StripPrefix("/", fs))
 
 	r.Get("/{short}", short.Redirect)
