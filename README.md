@@ -1,5 +1,5 @@
 # qnd.be
-Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just way more shitty. It was written in one day, so don't expext anything great.
+Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just way more shitty. It was written in one night, so don't expext anything great.
 
 ## usage
 there is built in authentication, but that can be turned off for adding links
@@ -27,27 +27,22 @@ curl -X DELETE \
 https://qnd.be
 ```
 
-That's all it can do. Here, auth is probably on all the way atm.
+That's all it can do.
 
 ## host
-If that repo I linked is still private, well, tough luck. Contact me if you really want it, but maybe just use something you can actually trust to not explode because of bad error handling.
+Calling this stable would be wrong. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:
 
 - clone [github.com/rrune/goshort](https://github.com/rrune/goshort)
+- create the SQL table using `db.sql`
 - copy ``/data/config.yml.sample`` to ``/data/config.yml``
 - configure the config
 - change port in ``docker-compose.yml``
 - ``docker-compose up``
 
-SQL table should be called ``shortLinks``, 3 colums:
-
-- short (type text)
-- url (type text)
-- timestamp (type timestamp)
-
 ## stuff used
-This runs on Go. That's basically it. Uses mariadb to store stuff. If you want to use some other database, you have to write that code yourself.
+This is written in Go. That's basically it. Uses mariadb/mysql to store stuff. If you want to use some other database, you have to write that code yourself.
 
 ## abuse/contact
-Should this actually be without auth, either because I decided to make it public or because I fucked up, please only link stuff compliant with german law. Thanks!
+Please only link stuff compliant with german law. Thanks! If you want something removed for whatever reason, send me a mail. Responses might take a day.
 
 [rune@ruune.de](mailto:rune@ruune.de)
