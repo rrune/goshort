@@ -21,7 +21,7 @@ func main() {
 	err = yaml.Unmarshal(ymlDatam, &config)
 	util.CheckPanic(err)
 
-	db, err := database.New(config.Username, config.Password, config.Address)
+	db, err := database.New("mysql", config.Username, config.Password, config.Address)
 	util.CheckPanic(err)
 	shorter := short.New(config.Url, db)
 

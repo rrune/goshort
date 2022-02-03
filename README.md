@@ -40,7 +40,7 @@ Calling this stable would be wrong. It was written in one night, it's mostly unt
 - ``docker-compose up``
 
 ## stuff used
-This is written in Go. That's basically it. Uses mariadb/mysql to store stuff. If you want to use some other database, you have to write that code yourself.
+This is written in Go. That's basically it. Uses mariadb/mysql to store stuff. If you want to use some other database, you have to write that code yourself (has to implement the Database interface).
 
 ## abuse/contact
 Please only link stuff compliant with german law. Thanks! If you want something removed for whatever reason, send me a mail. Responses might take a day.

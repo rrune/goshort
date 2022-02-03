@@ -20,7 +20,7 @@ func TestMain(m *testing.M) {
 	err = yaml.Unmarshal((ymlData), &config)
 	util.CheckPanic(err)
 
-	DB, err = New(config.Username, config.Password, config.Address)
+	DB, err = New("mysql", config.Username, config.Password, config.Address)
 	util.CheckPanic(err)
 
 	m.Run()
