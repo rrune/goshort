@@ -29,7 +29,7 @@ func TestMain(m *testing.M) {
 func TestAddShort(t *testing.T) {
 	is := is.New(t)
 	url := "https://example.com"
-	msg, err := DB.AddShort(url)
+	msg, err := DB.AddShort(url, "8.8.8.8")
 	short = msg
 
 	is.NoErr(err) // TestAddDelShort: Error (1)

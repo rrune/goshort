@@ -35,7 +35,7 @@ func (d Mysql) GetShorts(short string) (r []models.Short, err error) {
 	return
 }
 
-func (d Mysql) AddShort(url string) (msg string, err error) {
+func (d Mysql) AddShort(url string, ip string) (msg string, err error) {
 	var random string
 	alreadyExists := true
 	for alreadyExists {
@@ -50,7 +50,7 @@ func (d Mysql) AddShort(url string) (msg string, err error) {
 			alreadyExists = false
 		}
 	}
-	insert, err := d.DB.Query("INSERT INTO shortLinks VALUES(?, ?, ?)", random, url, time.Now())
+	insert, err := d.DB.Query("INSERT INTO shortLinks VALUES(?, ?, ?, ?)", random, url, time.Now(), ip)
 	if util.Check(err, true) {
 		msg = "Error with database"
 		return

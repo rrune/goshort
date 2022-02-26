@@ -1,5 +1,6 @@
 CREATE TABLE shortLinks (
   `short` text,
   `url` text,
-  `timestamp` timestamp
+  `timestamp` timestamp,
+  `ip` text
 );

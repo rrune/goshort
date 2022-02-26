@@ -9,7 +9,7 @@ import (
 
 type Database interface {
 	GetShorts(string) ([]models.Short, error)
-	AddShort(string) (string, error)
+	AddShort(string, string) (string, error)
 	DelShort(string) (bool, string, error)
 }
 

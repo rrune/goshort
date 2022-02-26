@@ -4,6 +4,7 @@ import (
 	"net/http"
 
 	"github.com/go-chi/chi"
+	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
 	"github.com/rrune/goshort/models"
 	"github.com/rrune/goshort/short"
@@ -15,6 +16,8 @@ func NewRouter(short short.Short, cfg models.Config) http.Handler {
 	config = cfg
 
 	r := chi.NewRouter()
+	r.Use(middleware.RealIP)
+	r.Use(logger)
 	r.Use(cors.Handler(cors.Options{
 		AllowedOrigins: []string{"*"},
 		AllowedMethods: []string{"GET", "POST", "DELETE", "OPTIONS"},

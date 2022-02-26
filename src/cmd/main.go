@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"net/http"
 	"os"
@@ -15,6 +14,15 @@ import (
 )
 
 func main() {
+	f, err := os.OpenFile("../data/goshort.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+	if err != nil {
+		log.Printf("error opening file: %v", err)
+	}
+	defer f.Close()
+	log.SetOutput(f)
+	log.SetFlags(2 | 3)
+	log.Println("")
+
 	var config models.Config
 	ymlDatam, err := os.ReadFile("../data/config.yml")
 	util.CheckPanic(err)
@@ -27,6 +35,6 @@ func main() {
 
 	go util.WaitForExit()
 
-	fmt.Println("Running on Port " + config.Port)
+	log.Println("Running on Port " + config.Port)
 	log.Fatal(http.ListenAndServe(":"+config.Port, router.NewRouter(shorter, config)))
 }

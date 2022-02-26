@@ -1,8 +1,8 @@
 package short
 
 import (
-	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
 	"net/url"
 
@@ -37,9 +37,9 @@ func (s Short) AddShort(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	msg, err := s.DB.AddShort(url)
+	msg, err := s.DB.AddShort(url, r.RemoteAddr)
 	if util.Check(err, true) {
-		fmt.Println(msg)
+		log.Println(msg)
 		w.Write([]byte("Error"))
 	}
 
@@ -72,7 +72,7 @@ func (s Short) DelShort(w http.ResponseWriter, r *http.Request) {
 	short := string(b)
 	exists, msg, err := s.DB.DelShort(short)
 	if util.Check(err, true) {
-		fmt.Println(msg)
+		log.Println(msg)
 		w.Write([]byte("Error"))
 		return
 	}

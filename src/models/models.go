@@ -15,4 +15,5 @@ type Short struct {
 	Url   string `db:"url"`
 	//Timestamp time.Time `db:"timestamp"`
 	Timestamp []uint8 `db:"timestamp"`
+	Ip        string  `db:"ip"`
 }
