@@ -1,6 +1,7 @@
 package database
 
 import (
+	"errors"
 	"math/rand"
 	"time"
 
@@ -11,6 +12,16 @@ type Database interface {
 	GetShorts(string) ([]models.Short, error)
 	AddShort(string, string) (string, error)
 	DelShort(string) (bool, string, error)
+}
+
+func New(dbType string, username string, password string, address string) (d Database, err error) {
+	switch dbType {
+	case "mysql":
+		d, err = newMySQL(username, password, address)
+	default:
+		err = errors.New("Unknown database type")
+	}
+	return
 }
 
 func Random(n int) (s string) {
