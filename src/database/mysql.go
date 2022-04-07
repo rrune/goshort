@@ -14,18 +14,6 @@ type Mysql struct {
 	DB *sqlx.DB
 }
 
-/* func New(dbType string, username string, password string, address string) (d Database, err error) {
-	source := fmt.Sprintf("%s:%s@%s", username, password, address)
-	db, err := sqlx.Open(dbType, (source))
-	if util.Check(err, false) {
-		return
-	}
-	d = Mysql{
-		DB: db,
-	}
-	return
-} */
-
 func newMySQL(username string, password string, address string) (d Database, err error) {
 	source := fmt.Sprintf("%s:%s@%s", username, password, address)
 	db, err := sqlx.Open("mysql", (source))
