@@ -10,23 +10,23 @@ import (
 	"github.com/rrune/goshort/util"
 )
 
-type Mysql struct {
+type Sql struct {
 	DB *sqlx.DB
 }
 
-func newMySQL(username string, password string, address string) (d Database, err error) {
+func newSQL(dbtype string, username string, password string, address string) (d Database, err error) {
 	source := fmt.Sprintf("%s:%s@%s", username, password, address)
-	db, err := sqlx.Open("mysql", (source))
+	db, err := sqlx.Open(dbtype, source)
 	if util.Check(err, false) {
 		return
 	}
-	d = Mysql{
+	d = Sql{
 		DB: db,
 	}
 	return
 }
 
-func (d Mysql) GetShorts(short string) (r []models.Short, err error) {
+func (d Sql) GetShorts(short string) (r []models.Short, err error) {
 	if short == "" {
 		err = d.DB.Select(&r, "SELECT * FROM shortLinks")
 		return
@@ -35,7 +35,7 @@ func (d Mysql) GetShorts(short string) (r []models.Short, err error) {
 	return
 }
 
-func (d Mysql) AddShort(url string, ip string) (msg string, err error) {
+func (d Sql) AddShort(url string, ip string) (msg string, err error) {
 	var random string
 	alreadyExists := true
 	for alreadyExists {
@@ -61,7 +61,7 @@ func (d Mysql) AddShort(url string, ip string) (msg string, err error) {
 	return
 }
 
-func (d Mysql) DelShort(short string) (exists bool, msg string, err error) {
+func (d Sql) DelShort(short string) (exists bool, msg string, err error) {
 	shorts, err := d.GetShorts(short)
 	if util.Check(err, true) {
 		msg = "Error with database"

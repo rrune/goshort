@@ -33,8 +33,6 @@ func main() {
 	util.CheckPanic(err)
 	shorter := short.New(config.Url, db)
 
-	go util.WaitForExit()
-
 	log.Println("Running on Port " + config.Port)
 	log.Fatal(http.ListenAndServe(":"+config.Port, router.NewRouter(shorter, config)))
 }

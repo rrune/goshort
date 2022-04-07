@@ -17,7 +17,7 @@ type Database interface {
 func New(dbType string, username string, password string, address string) (d Database, err error) {
 	switch dbType {
 	case "mysql":
-		d, err = newMySQL(username, password, address)
+		d, err = newSQL(dbType, username, password, address)
 	default:
 		err = errors.New("Unknown database type")
 	}

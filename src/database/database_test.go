@@ -15,7 +15,7 @@ var short string
 
 func TestMain(m *testing.M) {
 	var config models.Config
-	ymlData, err := os.ReadFile("../config.yml")
+	ymlData, err := os.ReadFile("../../data/config.yml")
 	util.CheckPanic(err)
 	err = yaml.Unmarshal((ymlData), &config)
 	util.CheckPanic(err)
