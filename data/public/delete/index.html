@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/form.css">
+    <title>qnd.be</title>
+</head>
+
+<body>
+    <form method="DELETE" id="form">
+        <p>Delete a URL:</p>
+        <input type="hidden" id="method" value="DELETE">
+        <input id="auth" type="text" placeholder="Auth" required>
+        <input id="body" type="text" placeholder="Short" required>
+        <button type="submit">Delete</button>
+
+        <p id="out">​</p> 
+        <!-- theres a zero width space in there, just for the browser to actually render the <p>. That way, everything doesnt get moved when the <p> is filled-->
+    </form>
+    <script src="/static/form.js"></script>
+</body>
+</html>
