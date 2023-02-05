@@ -1,9 +1,10 @@
 url: https://example.com/ # needs / at the end
 port: "8080" # as string
-dbtype: <database type> # eg. mysql, no other database is implemented
-username: <database username>
-password: <database password>
-address: tcp(<ip>:<port>)/<database>
+dbtype: <database type> # eg. mysql, sqlite3, no other database is implemented
+username: <database username> # only for dbtype mysql
+password: <database password> # only for dbtype mysql
+address: tcp(<ip>:<port>)/<database> # only for dbtype mysql
+filename: database.db # in /data; only for dbtype sqlite3
 auth: false # authentication required to add short
 keys: # api keys
   - abc

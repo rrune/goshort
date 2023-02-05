@@ -6,6 +6,7 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
+	_ "github.com/mattn/go-sqlite3"
 	"github.com/rrune/goshort/models"
 	"github.com/rrune/goshort/util"
 )
@@ -14,7 +15,7 @@ type Sql struct {
 	DB *sqlx.DB
 }
 
-func newSQL(dbtype string, username string, password string, address string) (d Database, err error) {
+func newServerSQL(dbtype string, username string, password string, address string) (d Database, err error) {
 	source := fmt.Sprintf("%s:%s@%s", username, password, address)
 	db, err := sqlx.Open(dbtype, source)
 	if util.Check(err, false) {
@@ -23,6 +24,30 @@ func newSQL(dbtype string, username string, password string, address string) (d 
 	d = Sql{
 		DB: db,
 	}
+	return
+}
+
+func newSQLite(dbtype string, filename string) (d Database, err error) {
+	db, err := sqlx.Open(dbtype, "../../data/"+filename)
+	if util.Check(err, false) {
+		return
+	}
+	d = Sql{
+		DB: db,
+	}
+	return
+}
+
+// check if the table exists, and create it if it does not
+func (d Sql) InitDB() (err error) {
+	_, err = d.DB.Query(`
+	CREATE TABLE if not exists shortLinks (
+		'short' text NOT NULL,
+		'url' text NOT NULL,
+		'timestamp' timestamp NOT NULL,
+		'ip' text NOT NULL
+	)
+	`)
 	return
 }
 

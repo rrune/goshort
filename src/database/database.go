@@ -9,18 +9,24 @@ import (
 )
 
 type Database interface {
+	InitDB() error
 	GetShorts(string) ([]models.Short, error)
 	AddShort(string, string) (string, error)
 	DelShort(string) (bool, string, error)
 }
 
-func New(dbType string, username string, password string, address string) (d Database, err error) {
+func New(dbType string, username string, password string, address string, filename string) (d Database, err error) {
 	switch dbType {
 	case "mysql":
-		d, err = newSQL(dbType, username, password, address)
+		d, err = newServerSQL(dbType, username, password, address)
+	case "sqlite3":
+		d, err = newSQLite(dbType, filename)
 	default:
 		err = errors.New("Unknown database type")
 	}
+
+	err = d.InitDB()
+
 	return
 }
 

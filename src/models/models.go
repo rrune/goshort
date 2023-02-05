@@ -7,6 +7,7 @@ type Config struct {
 	Username string   `yaml:"username"`
 	Password string   `yaml:"password"`
 	Address  string   `yaml:"address"`
+	Filename string   `yaml:"filename"`
 	Auth     bool     `yaml:"auth"`
 	Keys     []string `yaml:"keys"`
 }
