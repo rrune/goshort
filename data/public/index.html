@@ -33,7 +33,10 @@
     -H &quot;Authorization: Bearer &lt;token&gt;&quot; \
     -d &lt;short&gt; \
     https://qnd.be</code></pre>
-    <p>That’s all it can do. Very simple GUIs can also by found at <a href="/add/">/add/</a> and <a href="/delete/">/delete/</a> (second slash is important).</p>
+    <p>Get all shorts (needs auth):</p>
+    <pre><code>curl -H "Authorization: Bearer <token>" \
+    https://qnd.be/shorts</code></pre>
+    <p>That’s all it can do. Very simple GUIs can also by found at <a href="/add/">/add/</a>, <a href="/delete/">/delete/</a> and <a href="/getAll/">/getAll/</a> (second slash is important).</p>
     <h2 id="host">host</h2>
     <p>
       Calling this stable would be wrong. It was written in one night, it’s

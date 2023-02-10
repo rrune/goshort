@@ -38,6 +38,7 @@ func NewRouter(short short.Short, cfg models.Config) http.Handler {
 
 	r.Group(func(r chi.Router) {
 		r.Use(auth)
+		r.Get("/shorts", short.GetEveryShort)
 		r.Delete("/", short.DelShort)
 	})
 	return r

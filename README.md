@@ -27,7 +27,13 @@ curl -X DELETE \
 https://qnd.be
 ```
 
-That's all it can do. Very simple GUIs can also by found at ``/add/`` and ``/delete/`` (second slash is important).
+Get all shorts (needs auth):
+```
+curl -H "Authorization: Bearer <token>" \
+https://qnd.be/shorts
+```
+
+That's all it can do. Very simple GUIs can also by found at ``/add/``, ``/delete/`` and ``/getAll/`` (second slash is important).
 
 ## host
 Calling this stable would be wrong. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:

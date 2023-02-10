@@ -1,6 +1,7 @@
 package short
 
 import (
+	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -59,6 +60,19 @@ func (s Short) Redirect(w http.ResponseWriter, r *http.Request) {
 	}
 	url := shorts[0].Url
 	http.Redirect(w, r, url, http.StatusTemporaryRedirect)
+}
+
+func (s Short) GetEveryShort(w http.ResponseWriter, r *http.Request) {
+	shorts, err := s.DB.GetShorts("")
+	if util.Check(err, true) {
+		w.Write([]byte("Error"))
+		return
+	}
+	response := ""
+	for _, short := range shorts {
+		response += fmt.Sprintf("%s %s\n", short.Short, short.Url)
+	}
+	w.Write([]byte(response))
 }
 
 func (s Short) DelShort(w http.ResponseWriter, r *http.Request) {

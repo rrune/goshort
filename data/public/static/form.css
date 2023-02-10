@@ -11,3 +11,7 @@ form {
 
     width: 20%;
 }
+
+#out {
+    white-space: pre-line;
+}
