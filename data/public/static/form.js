@@ -10,7 +10,7 @@ document.getElementById("form").addEventListener("submit", async function(event)
         headers: {
             "Authorization": `Bearer ${auth}`
         },
-        body: method == "GET" || "HEAD" ? undefined : body 
+        body: method == "GET" || method == "HEAD" ? undefined : body 
     })
 
     document.getElementById("out").innerHTML = await response.text()
