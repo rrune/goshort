@@ -3,13 +3,12 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
+    margin-top: 15vh;
+}
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    width: 20%;
+#auth {
+    width: 55%;
 }
 
 #out {
