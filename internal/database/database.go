@@ -5,7 +5,7 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/rrune/goshort/models"
+	"github.com/rrune/goshort/internal/models"
 )
 
 type Database interface {
@@ -19,7 +19,7 @@ func New(dbType string, username string, password string, address string) (d Dat
 	case "mysql":
 		d, err = newSQL(dbType, username, password, address)
 	default:
-		err = errors.New("Unknown database type")
+		err = errors.New("unknown database type")
 	}
 	return
 }

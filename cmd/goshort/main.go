@@ -5,16 +5,16 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/rrune/goshort/database"
-	"github.com/rrune/goshort/models"
-	"github.com/rrune/goshort/router"
-	"github.com/rrune/goshort/short"
-	"github.com/rrune/goshort/util"
+	"github.com/rrune/goshort/internal/database"
+	"github.com/rrune/goshort/internal/models"
+	"github.com/rrune/goshort/internal/router"
+	"github.com/rrune/goshort/internal/short"
+	"github.com/rrune/goshort/internal/util"
 	"gopkg.in/yaml.v2"
 )
 
 func main() {
-	f, err := os.OpenFile("../data/goshort.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
+	f, err := os.OpenFile("./data/goshort.log", os.O_APPEND|os.O_CREATE|os.O_RDWR, 0666)
 	if err != nil {
 		log.Printf("error opening file: %v", err)
 	}
@@ -24,7 +24,7 @@ func main() {
 	log.Println("")
 
 	var config models.Config
-	ymlDatam, err := os.ReadFile("../data/config.yml")
+	ymlDatam, err := os.ReadFile("./config/config.yml")
 	util.CheckPanic(err)
 	err = yaml.Unmarshal(ymlDatam, &config)
 	util.CheckPanic(err)

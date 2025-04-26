@@ -1,1 +1,1 @@
-open ../data/config.yml: no such file or directory
+open ../../../config/config.yml: no such file or directory

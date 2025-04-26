@@ -6,8 +6,8 @@ import (
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"
 	"github.com/go-chi/cors"
-	"github.com/rrune/goshort/models"
-	"github.com/rrune/goshort/short"
+	"github.com/rrune/goshort/internal/models"
+	"github.com/rrune/goshort/internal/short"
 )
 
 var config models.Config
@@ -24,7 +24,7 @@ func NewRouter(short short.Short, cfg models.Config) http.Handler {
 		AllowedHeaders: []string{"*"},
 	}))
 
-	fs := http.FileServer(http.Dir("../data/public"))
+	fs := http.FileServer(http.Dir("./web/public"))
 	r.Handle("/*", http.StripPrefix("/", fs))
 
 	r.Get("/{short}", short.Redirect)

@@ -8,8 +8,8 @@ import (
 	"net/url"
 
 	"github.com/go-chi/chi"
-	"github.com/rrune/goshort/database"
-	"github.com/rrune/goshort/util"
+	"github.com/rrune/goshort/internal/database"
+	"github.com/rrune/goshort/internal/util"
 )
 
 type Short struct {

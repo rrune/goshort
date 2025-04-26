@@ -6,8 +6,8 @@ import (
 
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/jmoiron/sqlx"
-	"github.com/rrune/goshort/models"
-	"github.com/rrune/goshort/util"
+	"github.com/rrune/goshort/internal/models"
+	"github.com/rrune/goshort/internal/util"
 )
 
 type Sql struct {

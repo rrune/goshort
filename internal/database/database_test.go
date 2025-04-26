@@ -5,8 +5,8 @@ import (
 	"testing"
 
 	"github.com/matryer/is"
-	"github.com/rrune/goshort/models"
-	"github.com/rrune/goshort/util"
+	"github.com/rrune/goshort/internal/models"
+	"github.com/rrune/goshort/internal/util"
 	"gopkg.in/yaml.v2"
 )
 
@@ -15,7 +15,7 @@ var short string
 
 func TestMain(m *testing.M) {
 	var config models.Config
-	ymlData, err := os.ReadFile("../../data/config.yml")
+	ymlData, err := os.ReadFile("../../config/config.yml")
 	util.CheckPanic(err)
 	err = yaml.Unmarshal((ymlData), &config)
 	util.CheckPanic(err)
