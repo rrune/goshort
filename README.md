@@ -1,5 +1,5 @@
 # qnd.be
-Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just way more shitty. It was written in one night, so don't expext anything great.
+Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just less good with less features. It was written in one night, so don't expext anything great.
 
 ## usage
 there is built in authentication, but that can be turned off for adding links
@@ -36,11 +36,11 @@ https://qnd.be/shorts
 That's all it can do. Very simple GUIs can also by found at ``/add/``, ``/delete/`` and ``/getAll/`` (second slash is important).
 
 ## host
-Calling this stable would be wrong. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:
+This isn't really stable or tested. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:
 
 - clone [github.com/rrune/goshort](https://github.com/rrune/goshort)
 - create the SQL table using `db.sql`
-- copy ``/data/config.yml.sample`` to ``/data/config.yml``
+- copy ``/config/config.yml.sample`` to ``/config/config.yml``
 - configure the config
 - change port in ``docker-compose.yml``
 - ``docker-compose up``
