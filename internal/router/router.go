@@ -19,9 +19,9 @@ func NewRouter(short short.Short, cfg models.Config) http.Handler {
 	r.Use(middleware.RealIP)
 	r.Use(logger)
 	r.Use(cors.Handler(cors.Options{
-		AllowedOrigins: []string{"*"},
-		AllowedMethods: []string{"GET", "POST", "DELETE", "OPTIONS"},
-		AllowedHeaders: []string{"*"},
+		AllowedOrigins: []string{cfg.Url},
+		AllowedMethods: []string{"GET", "POST", "DELETE"},
+		AllowedHeaders: []string{"Authorization"},
 	}))
 
 	fs := http.FileServer(http.Dir("./web/public"))
