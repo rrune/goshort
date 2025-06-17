@@ -30,7 +30,7 @@ curl -H "Authorization: Bearer <token>" \
 qnd.be/shorts
 ```
 
-That's all it can do. Very simple GUIs can also by found at `[/add/](https://qnd.be/add/), [/delete/](https://qnd.be/delete/) and [/getAll/](https://qnd.be/getAll/) (second slash is important).
+That's all it can do. Very simple GUIs can also by found at [/add/](https://qnd.be/add/), [/delete/](https://qnd.be/delete/) and [/getAll/](https://qnd.be/getAll/) (second slash is important).
 
 ## host
 This isn't really stable or tested. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:
