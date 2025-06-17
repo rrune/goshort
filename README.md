@@ -1,22 +1,19 @@
 # qnd.be
-Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just less good with less features. It was written in one night, so don't expext anything great.
+Just another simple url shortener to use with curl. Kinda like [0x0.st](https://0x0.st). Just less good with less features :)
 
 ## usage
 there is built in authentication, but that can be turned off for adding links
 
 without auth:
 ```
-curl -X POST \
--d https://example.com \
-https://qnd.be
+curl -d https://example.com qnd.be
 ```
 
 with auth:
 ```
-curl -X POST \
--H "Authorization: Bearer <token>" \
+curl -H "Authorization: Bearer <token>" \
 -d https://example.com \
-https://qnd.be
+qnd.be
 ```
 
 Deleting only works with auth:
@@ -24,16 +21,16 @@ Deleting only works with auth:
 curl -X DELETE \
 -H "Authorization: Bearer <token>" \
 -d <short> \
-https://qnd.be
+qnd.be
 ```
 
 Get all shorts (needs auth):
 ```
 curl -H "Authorization: Bearer <token>" \
-https://qnd.be/shorts
+qnd.be/shorts
 ```
 
-That's all it can do. Very simple GUIs can also by found at ``/add/``, ``/delete/`` and ``/getAll/`` (second slash is important).
+That's all it can do. Very simple GUIs can also by found at `[/add/](https://qnd.be/add/), [/delete/](https://qnd.be/delete/) and [/getAll/](https://qnd.be/getAll/) (second slash is important).
 
 ## host
 This isn't really stable or tested. It was written in one night, it's mostly untested and lacks features. If you still wanna use it:
