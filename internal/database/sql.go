@@ -20,6 +20,12 @@ func newSQL(dbtype string, username string, password string, address string) (d 
 	if util.Check(err, false) {
 		return
 	}
+
+	// connection pool
+	db.SetMaxOpenConns(100)
+	db.SetMaxIdleConns(10)
+	db.SetConnMaxLifetime(time.Minute * 5)
+
 	d = Sql{
 		DB: db,
 	}
